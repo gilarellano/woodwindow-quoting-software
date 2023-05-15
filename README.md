@@ -56,10 +56,9 @@ We welcome contributions to this project! Here's how you can contribute:
 
 1. Fork the project.
 2. Create your feature branch (git checkout -b feature/AmazingFeature).
-3. Commit your changes (git commit -m 'Add some AmazingFeature').
+3. Commit your changes (git commit -m 'PR Issue').
 4. Push to the branch (git push origin feature/AmazingFeature).
 5. Open a Pull Request.
-Please make sure your contributions adhere to our coding standards.
 
 ## Pull Request Process
 Ensure any install or build dependencies are removed before the end of the layer when doing a build.
