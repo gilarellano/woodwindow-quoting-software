@@ -19,7 +19,6 @@ This software is designed to automate the quoting process for a wood window manu
 │   ├── Window Quote.csv
 │   └── Window Quote Breakdown.csv
 ├── test
-├── Archive
 └── README.md
 ```
 - `src` directory: This directory contains the primary source code for our wood window quoting software. It contains the `IOWindowQuotes.cpp` and `WoodWindow.cpp` files which perform the main operations of reading the input data, calculating the quote, and generating output. Organizing our source files in a dedicated directory helps in quickly locating and managing the application's code.
