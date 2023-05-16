@@ -105,16 +105,16 @@ void WoodWindow::CalculateCost() {
     CalculateGlassArea();
 
     // Calculate the cost of the sash only
-    if (strcmp("DF", windowWood.c_str()) == 0) {
+    if ("DF"==windowWood.c_str()) {
         sashFrameCost = sashPerimeterFt * WindowConstants::DOUGLAS_FIR_COST_FT;
-    } else if (strcmp("MA", windowWood.c_str()) == 0) {
+    } else if ("MA" == windowWood.c_str()) {
         sashFrameCost = sashPerimeterFt * WindowConstants::MAHOGANY_COST_SQFT;
     }
 
     // If there is grids, add onto the cost of the sash
-    if (hasLites == true && (strcmp("DF", windowWood.c_str()) == 0)) {
+    if (hasLites == true && ("DF" == windowWood.c_str())) {
         sashFrameCost += (numLites * WindowConstants::DOUGLAS_FIR_GRID);
-    } else if (hasLites == true && (strcmp("MA", windowWood.c_str()) == 0)) {
+    } else if (hasLites == true && ("MA" == windowWood.c_str())) {
         sashFrameCost += (numLites * WindowConstants::MAHOGANY_GRID);
     }
 
@@ -130,23 +130,23 @@ void WoodWindow::CalculateCost() {
     }
 
     // Calculate the cost of the glass
-    if (strcmp("DP", windowGlass.c_str()) == 0) {
+    if ("DP" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::DP_COST_SQFT;
-    } else if (strcmp("DP_LOW_E", windowGlass.c_str()) == 0) {
+    } else if ("DP_LOW_E" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::DP_LOW_E_COST_SQFT;
-    } else if (strcmp("DP_TEMPERED", windowGlass.c_str()) == 0) {
+    } else if ("DP_TEMPERED" ==  windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::DP_TEMPERED_COST_SQFT;
-    } else if (strcmp("DP_LAMINATED", windowGlass.c_str()) == 0) {
+    } else if ("DP_LAMINATED" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::DP_LAMINATED_COST_SQFT;
-    } else if (strcmp("DP_TEMPERED_LOW_E", windowGlass.c_str()) == 0) {
+    } else if ("DP_TEMPERED_LOW_E" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::DP_TEMPERED_LOW_E_COST_SQFT;
-    } else if (strcmp("DP_SATIN_ETCHED", windowGlass.c_str()) == 0) {
+    } else if ("DP_SATIN_ETCHED" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::DP_SATIN_ETCHED_COST_SQFT;
-    } else if (strcmp("DP_OBSCURED", windowGlass.c_str()) == 0) {
+    } else if ("DP_OBSCURED" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::DP_OBSCURED_COST_SQFT;
     
         
-    } else if (strcmp("SP", windowGlass.c_str()) == 0) {
+    } else if ("SP" == windowGlass.c_str()) {
         if (hasLites == true) {
             glassAreaCost = 10 + (glassAreaSqFt * WindowConstants::SP_COST_SQFT); 
             // Since we dont charge for SP, add $10 per pane for the labor of cutting it
@@ -154,13 +154,13 @@ void WoodWindow::CalculateCost() {
         } else {
             glassAreaCost = glassAreaSqFt * WindowConstants::SP_COST_SQFT;
         }
-    } else if (strcmp("SP_LAMINATED", windowGlass.c_str()) == 0) {
+    } else if ("SP_LAMINATED"== windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::SP_LAMINATED_COST_SQFT;
-    } else if (strcmp("SP_TEMPERED", windowGlass.c_str()) == 0) {
+    } else if ("SP_TEMPERED" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::SP_TEMPERED_COST_SQFT;
-    } else if (strcmp("SP_WHITE_LAMINATE", windowGlass.c_str()) == 0) {
+    } else if ("SP_WHITE_LAMINATE"== windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::SP_WHITE_LAMINATE_COST_SQFT;
-    } else if (strcmp("SP_OBSCURED", windowGlass.c_str()) == 0) {
+    } else if ("SP_OBSCURED" == windowGlass.c_str()) {
         glassAreaCost = glassAreaSqFt * WindowConstants::SP_OBSCURED_COST_SQFT;
     }
 
@@ -172,19 +172,19 @@ void WoodWindow::CalculateCost() {
     // Due to how floating point values are stored in binary, IEEE 754, we compare as "close enough" using < or >
     if (fabs(installationCost - 0) < 0.0001) {
         // Calculates the installation fee, depending on the type of window
-        if (strcmp("SH", windowType.c_str()) == 0) {
+        if ("SH", windowType.c_str()) {
             installationCost = WindowConstants::SH_INSTALLATION_FEE;
-        } else if (strcmp("DH", windowType.c_str()) == 0) {
+        } else if ("DH" ==  windowType.c_str()) {
             installationCost = WindowConstants::DH_INSTALLATION_FEE;
-        } else if (strcmp("AW", windowType.c_str()) == 0) {
+        } else if ("AW" ==  windowType.c_str()) {
             installationCost = WindowConstants::AW_INSTALLATION_FEE;
-        } else if (strcmp("FIXED", windowType.c_str()) == 0) {
+        } else if ("FIXED" == windowType.c_str()) {
             if (sashPerimeterFt < 11) {
                 installationCost = WindowConstants::FIXED_SMALL_INSTALLATION_FEE;
             } else {
                 installationCost = WindowConstants::FIXED_LARGE_INSTALLATION_FEE;
             }
-        } else if (strcmp("CA", windowType.c_str()) == 0) {
+        } else if ("CA" == windowType.c_str()) {
             if (sashPerimeterFt < 11) {
                 installationCost = WindowConstants::CA_SMALL_INSTALLATION_FEE;
             } else {
